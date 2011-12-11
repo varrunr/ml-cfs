@@ -12,7 +12,7 @@ To compile the source
     $ make
 If the make gives no errors,
     $ ./linsched
-You can now see the time slice allocated by knn in comparision with CFS. Execute the simulator with
+You can now see the time slice allocated by knn in comparision with CFS.
 
 Files modified
 --------------
