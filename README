@@ -3,5 +3,37 @@ Applying Machine learning algorithms to scheduling
 Varrun Ramani <vramani [at] cs.stonybrook.edu>
 Suraj Brahmaraju <sbrahmaraju [at] cs.stonybrook.edu>
 
-Instructions:
+Instructions
+------------
+The source code can be found at src/
+    $ cd src/
+To compile the source
+    $ make clean
+    $ make
+If the make gives no errors,
+    $ ./linsched
+You can now see the time slice allocated by knn in comparision with CFS. Execute the simulator with
 
+Files modified
+--------------
+[1] src/linsched.c
+[2] src/linux_linsched.c
+[3] src/linux/kernel/sched.c 
+[4] src/linux/kernel/sched_fair.c
+
+Tweaking the scheduler 
+----------------------
+- src/inp : is the data set provided to the kNN algorithm
+
+- linsched_create_normal_task_binary() :[2] creates the task we have trained with void linsched_announce_callback(void) as call back function
+
+- To change the parameters of the program change the values struct elf_binary bin in [1]
+
+- To override knn, just uncomment time_slice = 0 in linsched_create_normal_task_binary in [2]
+
+- By keeping track of the task scheduled messages and turnaround time in the above two outputs printouts, you can see the number of times the process will be preempted between CFS and KNN
+
+NOTE:
+----
+- For any changes to the files, you have to do a make clean and make. 
+- We have done a constrained training so please useconsiderate values for parameters in the range of 100-500

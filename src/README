@@ -1,0 +1,39 @@
+LinSched: The Linux Scheduler Simulator
+John M. Calandrino, Dan P. Baumberger, Tong Li, Jessica C. Young, and Scott Hahn
+August 18, 2008
+Contact e-mail: jmc@cs.unc.edu (John M. Calandrino)
+
+LinSched is a user-space program that hosts the Linux scheduling subsystem. Its 
+purpose is to provide a tool for observing and modifying the behavior of the
+Linux scheduler, and prototyping new Linux scheduling policies, in a way that
+may be easier (or otherwise less painful or time-consuming) to many developers
+than direct experimentation with the Linux kernel, especially in the initial
+stages of development. Due to the high degree of code sharing between LinSched
+and the Linux scheduler, porting LinSched code to Linux is reasonably
+straightforward. LinSched may be especially useful to those who are new to
+Linux scheduler development.
+
+The code provided in this source distribution is still somewhat messy and
+documentation is limited (see "LinSched: The Linux Scheduler Simulator",
+which was published at PDCCS 2008 and should be available at the same website
+at which you downloaded this source code). I have not yet had the chance to
+perform the cleanup necessary to release a better version, but may do so in
+the future. If you do any code cleanup yourself, please let me know as it may
+be useful to incorporate it into LinSched. Since LinSched is a derivative work
+of Linux (kernel version 2.6.23.14), it is licensed under the GPLv2.
+
+LinSched should compile successfully using "make" on 32-bit Intel platforms
+using the gcc 4.0 compiler. Doing so builds the "linsched" program which will
+run an example simulation using the LinSched API. LinSched has also compiled
+and run successfully on 64-bit Intel platforms when the -m32 compiler option
+was used. While there has been some success building LinSched using gcc 3.4.x,
+doing so is not recommended and will require modification of the Makefile.
+
+If you do something useful with LinSched, modify it in a way that may be
+interesting to others (such as porting it to a new hardware platform or adding
+new features), or just have general feedback, feel free to contact me.
+
+Please check the README and license files in linux-2.6.23.14 directory for
+information about Linux source code that is included with this distribution
+of LinSched.
+

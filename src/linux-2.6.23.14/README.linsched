@@ -1,0 +1,11 @@
+LinSched Notes on the Linux Kernel Source Code
+John Calandrino
+August 18, 2008
+
+This directory contains MODIFIED versions of files that were part of the source
+code of the Linux kernel version 2.6.23.14. As they are derivative works, they too
+are licensed under the GPLv2 (see COPYING.linux). The __LINSCHED__ definition
+is used to add and remove code from these source files so that they can be used
+within LinSched. Undefining __LINSCHED__ should produce code that is identical
+to the original Linux source, which should make portability easier.
+
